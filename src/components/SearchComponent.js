@@ -41,7 +41,10 @@ const SearchComponent = ({onCityChange, weatherData}) => {
               onChange={handleInputChange}
               style={{border:"none" }}
             />
-            {inputCity.length != 0 && weatherData ? <BookmarksComponent selectedCity={inputCity} bookmarkedCityes={bookmarkedCityes}  toggleBookmark={toggleBookmark}/> : <div style={{width:"40px"}}></div>}
+            {
+              
+            // inputCity.length != 0 && weatherData ? <BookmarksComponent selectedCity={inputCity} bookmarkedCityes={bookmarkedCityes}  toggleBookmark={toggleBookmark}/> : <div style={{width:"40px"}}></div>
+            }
         </div>
         <button type="submit" className="btn btn-primary" style={{borderRadius:"0 5px 5px 0"}} onClick={handleSearch} >Cerca</button>
       </div>
