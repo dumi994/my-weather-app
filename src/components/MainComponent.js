@@ -196,7 +196,7 @@ const MainComponent = (props) => {
   return (
     <>
       
-      <SearchComponent onCityChange={handleCityChange}/>
+      <SearchComponent weatherData={weatherData} onCityChange={handleCityChange}/>
         <div>
         {/* VERIFICO CHE I DATI SIANO RPESENTI */}
         {weatherData && weatherData24h ? (

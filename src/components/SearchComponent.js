@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BookmarksComponent from './BookmarksComponent';
 
-const SearchComponent = ({onCityChange}) => {
+const SearchComponent = ({onCityChange, weatherData}) => {
   const [inputCity, setInputCity] = useState("");
   const [bookmarkedCityes, setBookmarkedCityes] = useState([])
     
@@ -26,7 +26,7 @@ const SearchComponent = ({onCityChange}) => {
     words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
     return words.join(" ");
   };
-
+ 
   return (
     <div className="">
       <h2>Scopri il meteo della tua città</h2>
@@ -41,7 +41,7 @@ const SearchComponent = ({onCityChange}) => {
               onChange={handleInputChange}
               style={{border:"none" }}
             />
-            {inputCity.length != 0 ? <BookmarksComponent selectedCity={inputCity} bookmarkedCityes={bookmarkedCityes}  toggleBookmark={toggleBookmark}/> : <div style={{width:"40px"}}></div>}
+            {inputCity.length != 0 && weatherData ? <BookmarksComponent selectedCity={inputCity} bookmarkedCityes={bookmarkedCityes}  toggleBookmark={toggleBookmark}/> : <div style={{width:"40px"}}></div>}
         </div>
         <button type="submit" className="btn btn-primary" style={{borderRadius:"0 5px 5px 0"}} onClick={handleSearch} >Cerca</button>
       </div>
